@@ -2904,7 +2904,7 @@
 
 
     <!-- Pricing Calculator -->
-    <section id="pricing" class="py-16 bg-gray-50 relative">
+    <section id="pricing" class="py-16 bg-gray-50">
     <div class="container mx-auto px-4">
         <div class="text-center mb-16">
             <h2 class="text-3xl md:text-4xl font-bold mb-4">Get Starting Quote</h2>
@@ -3014,18 +3014,46 @@
             </div>
         </div>
     </div>
-
-    <!-- Mobile Sticky CTA (Only shows when pricing section is visible) -->
-    <div id="mobilePricingCTA" class="fixed bottom-0 left-0 right-0 bg-white shadow-lg py-4 px-6 flex justify-between items-center md:hidden transition-transform duration-300 transform translate-y-full">
-        <div>
-            <p class="font-semibold">Starting from</p>
-            <p class="text-xl font-bold text-primary">$99</p>
-        </div>
-        <button class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-medium transition">
-            Book Now
-        </button>
-    </div>
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Price calculator functionality
+    const areaSlider = document.getElementById('area-slider');
+    const areaDisplay = document.getElementById('area-display');
+    const basicPrice = document.getElementById('basic-price');
+    const deepPrice = document.getElementById('deep-price');
+    const movePrice = document.getElementById('move-price');
+    const premiumPrice = document.getElementById('premium-price');
+
+    areaSlider.addEventListener('input', function() {
+        const area = parseInt(this.value);
+        areaDisplay.textContent = `${area} sq ft`;
+        
+        // Calculate prices based on area
+        const basic = calculatePrice(200, area);
+        const deep = calculatePrice(2499, area);
+        const move = calculatePrice(2499, area);
+        const premium = calculatePrice(2999, area);
+
+        basicPrice.textContent = `$${basic}`;
+        deepPrice.textContent = `$${deep}`;
+        movePrice.textContent = `$${move}`;
+        premiumPrice.textContent = `$${premium}`;
+    });
+
+    function calculatePrice(base, area) {
+        if (area < 500) return base;
+        if (area < 1000) return base + 20;
+        if (area < 1500) return base + 40;
+        if (area < 2000) return base + 60;
+        return base + 80;
+    }
+
+    // Initialize the slider
+    areaSlider.dispatchEvent(new Event('input'));
+});
+</script>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
