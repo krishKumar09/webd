@@ -2904,129 +2904,210 @@
 
 
     <!-- Pricing Calculator -->
-    <section id="pricing" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Get Starting Quote</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">This is just an estimate. Click BOOK NOW to tailor your
-                    cleaning.
-                    Remove rooms and areas to lower your price and pay only what we clean.</p>
-            </div>
+    <section id="pricing" class="py-16 bg-gray-50 relative">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Get Starting Quote</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">This is just an estimate. Click BOOK NOW to tailor your
+                cleaning. Remove rooms and areas to lower your price and pay only what we clean.</p>
+        </div>
 
-            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
-                <div class="md:flex">
-                    <div class="md:w-1/2 p-8">
-                        <div class="mb-8">
-                            <label class="block text-gray-700 mb-2 font-medium">Select Carpet Area (sq ft)</label>
-                            <div class="relative">
-                                <input type="range" min="300" max="2500" value="1200" class="area-slider"
-                                    id="area-slider">
-                                <div class="flex justify-between text-xs text-gray-500 mt-1">
-                                    <span>300</span>
-                                    <span>500</span>
-                                    <span>1000</span>
-                                    <span>1500</span>
-                                    <span>2000</span>
-                                    <span>2500+</span>
-                                </div>
-                            </div>
-                            <div class="mt-4 text-center">
-                                <p class="text-2xl font-bold text-primary" id="area-display">1200 sq ft</p>
+        <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+            <div class="md:flex">
+                <div class="md:w-1/2 p-8">
+                    <div class="mb-8">
+                        <label class="block text-gray-700 mb-2 font-medium">Select Carpet Area (sq ft)</label>
+                        <div class="relative">
+                            <input type="range" min="300" max="2500" value="1200" class="area-slider" id="area-slider">
+                            <div class="flex justify-between text-xs text-gray-500 mt-1">
+                                <span>300</span>
+                                <span>500</span>
+                                <span>1000</span>
+                                <span>1500</span>
+                                <span>2000</span>
+                                <span>2500+</span>
                             </div>
                         </div>
-
-                        <div class="mb-4">
-                            <label class="block text-gray-700 mb-2 font-medium">Cleaning Frequency</label>
-                            <div class="grid grid-cols-4 gap-2">
-                                <button
-                                    class="py-2 px-4 bg-gray-100 rounded-lg text-gray-700 font-medium">One-time</button>
-                                <button class="py-2 px-4 bg-primary text-white rounded-lg font-medium">Weekly</button>
-                                <button
-                                    class="py-2 px-4 bg-gray-100 rounded-lg text-gray-700 font-medium">Biweekly</button>
-                                <button
-                                    class="py-2 px-4 bg-gray-100 rounded-lg text-gray-700 font-medium">Monthly</button>
-                            </div>
+                        <div class="mt-4 text-center">
+                            <p class="text-2xl font-bold text-primary" id="area-display">1200 sq ft</p>
                         </div>
+                    </div>
 
-                        <div class="mb-4">
-                            <label class="block text-gray-700 mb-2 font-medium">Special Services</label>
-                            <div class="grid grid-cols-2 gap-2">
-                                <button class="py-2 px-4 bg-gray-100 rounded-lg text-gray-700 font-medium">
-                                    Move In / Move Out
-                                </button>
-                            </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 mb-2 font-medium">Cleaning Frequency</label>
+                        <div class="grid grid-cols-4 gap-2">
+                            <button class="py-2 px-4 bg-gray-100 rounded-lg text-gray-700 font-medium">One-time</button>
+                            <button class="py-2 px-4 bg-primary text-white rounded-lg font-medium">Weekly</button>
+                            <button class="py-2 px-4 bg-gray-100 rounded-lg text-gray-700 font-medium">Biweekly</button>
+                            <button class="py-2 px-4 bg-gray-100 rounded-lg text-gray-700 font-medium">Monthly</button>
                         </div>
+                    </div>
 
-                        <div class="mt-8">
-                            <button
-                                class="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-lg font-medium transition shadow-lg">
-                                Book Now
+                    <div class="mb-4">
+                        <label class="block text-gray-700 mb-2 font-medium">Special Services</label>
+                        <div class="grid grid-cols-2 gap-2">
+                            <button class="py-2 px-4 bg-gray-100 rounded-lg text-gray-700 font-medium">
+                                Move In / Move Out
                             </button>
                         </div>
                     </div>
 
-                    <div class="md:w-1/2 bg-primary bg-opacity-5 p-8 flex flex-col justify-center">
-                        <h3 class="text-xl font-bold mb-6 text-center">Estimated Pricing</h3>
-                        <div class="space-y-4">
-                            <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                                <div class="flex items-center">
-                                    <div class="bg-blue-100 rounded-lg p-2 mr-4">
-                                        <i class="fas fa-home text-primary"></i>
-                                    </div>
-                                    <div>
-                                        <p class="font-semibold">Basic Clean</p>
-                                    </div>
-                                </div>
-                                <p class="font-bold text-xl" id="basic-price">$200</p>
-                            </div>
+                    <div class="mt-8">
+                        <button class="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-lg font-medium transition shadow-lg">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
 
-                            <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                                <div class="flex items-center">
-                                    <div class="bg-cyan-100 rounded-lg p-2 mr-4">
-                                        <i class="fas fa-broom text-secondary"></i>
-                                    </div>
-                                    <div>
-                                        <p class="font-semibold">Deep Clean</p>
-                                    </div>
+                <div class="md:w-1/2 bg-primary bg-opacity-5 p-8 flex flex-col justify-center">
+                    <h3 class="text-xl font-bold mb-6 text-center">Estimated Pricing</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center py-3 border-b border-gray-200">
+                            <div class="flex items-center">
+                                <div class="bg-blue-100 rounded-lg p-2 mr-4">
+                                    <i class="fas fa-home text-primary"></i>
                                 </div>
-                                <p class="font-bold text-xl" id="deep-price">$2499</p>
-                            </div>
-
-                            <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                                <div class="flex items-center">
-                                    <div class="bg-amber-100 rounded-lg p-2 mr-4">
-                                        <i class="fas fa-truck-moving text-amber-500"></i>
-                                    </div>
-                                    <div>
-                                        <p class="font-semibold">Move-In/Out</p>
-                                    </div>
+                                <div>
+                                    <p class="font-semibold">Basic Clean</p>
                                 </div>
-                                <p class="font-bold text-xl" id="move-price">$2499</p>
                             </div>
-
-                            <div class="flex justify-between items-center py-3">
-                                <div class="flex items-center">
-                                    <div class="bg-green-100 rounded-lg p-2 mr-4">
-                                        <i class="fas fa-star text-accent"></i>
-                                    </div>
-                                    <div>
-                                        <p class="font-semibold">Premium Plan</p>
-                                    </div>
-                                </div>
-                                <p class="font-bold text-xl" id="premium-price">$2999</p>
-                            </div>
+                            <p class="font-bold text-xl" id="basic-price">$200</p>
                         </div>
 
-                        <div class="mt-8 text-center text-sm text-gray-500">
+                        <div class="flex justify-between items-center py-3 border-b border-gray-200">
+                            <div class="flex items-center">
+                                <div class="bg-cyan-100 rounded-lg p-2 mr-4">
+                                    <i class="fas fa-broom text-secondary"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Deep Clean</p>
+                                </div>
+                            </div>
+                            <p class="font-bold text-xl" id="deep-price">$2499</p>
+                        </div>
 
+                        <div class="flex justify-between items-center py-3 border-b border-gray-200">
+                            <div class="flex items-center">
+                                <div class="bg-amber-100 rounded-lg p-2 mr-4">
+                                    <i class="fas fa-truck-moving text-amber-500"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Move-In/Out</p>
+                                </div>
+                            </div>
+                            <p class="font-bold text-xl" id="move-price">$2499</p>
+                        </div>
+
+                        <div class="flex justify-between items-center py-3">
+                            <div class="flex items-center">
+                                <div class="bg-green-100 rounded-lg p-2 mr-4">
+                                    <i class="fas fa-star text-accent"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Premium Plan</p>
+                                </div>
+                            </div>
+                            <p class="font-bold text-xl" id="premium-price">$2999</p>
                         </div>
                     </div>
                 </div>
             </div>
-
-            
         </div>
-    </section>
+    </div>
+
+    <!-- Mobile Sticky CTA (Only shows when pricing section is visible) -->
+    <div id="mobilePricingCTA" class="fixed bottom-0 left-0 right-0 bg-white shadow-lg py-4 px-6 flex justify-between items-center md:hidden transition-transform duration-300 transform translate-y-full">
+        <div>
+            <p class="font-semibold">Starting from</p>
+            <p class="text-xl font-bold text-primary">$99</p>
+        </div>
+        <button class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-medium transition">
+            Book Now
+        </button>
+    </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const pricingSection = document.getElementById('pricing');
+    const mobileCTA = document.getElementById('mobilePricingCTA');
+    let isPricingVisible = false;
+    let scrollTimeout;
+
+    function checkPricingVisibility() {
+        const rect = pricingSection.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        
+        // Check if at least 25% of pricing section is visible
+        const visible = (rect.top <= windowHeight * 0.75) && 
+                       (rect.bottom >= windowHeight * 0.25);
+        
+        if (visible && !isPricingVisible) {
+            // Show CTA with smooth animation
+            mobileCTA.classList.remove('translate-y-full');
+            isPricingVisible = true;
+        } else if (!visible && isPricingVisible) {
+            // Hide CTA with smooth animation
+            mobileCTA.classList.add('translate-y-full');
+            isPricingVisible = false;
+        }
+    }
+
+    // Throttle scroll events for better performance
+    function throttleCheck() {
+        if (!scrollTimeout) {
+            scrollTimeout = setTimeout(function() {
+                scrollTimeout = null;
+                checkPricingVisibility();
+            }, 100);
+        }
+    }
+
+    // Initial check
+    checkPricingVisibility();
+    
+    // Check on scroll (throttled)
+    window.addEventListener('scroll', throttleCheck);
+    
+    // Also check when window is resized
+    window.addEventListener('resize', checkPricingVisibility);
+
+    // Price calculator functionality (existing code)
+    const areaSlider = document.getElementById('area-slider');
+    const areaDisplay = document.getElementById('area-display');
+    const basicPrice = document.getElementById('basic-price');
+    const deepPrice = document.getElementById('deep-price');
+    const movePrice = document.getElementById('move-price');
+    const premiumPrice = document.getElementById('premium-price');
+
+    areaSlider.addEventListener('input', function() {
+        const area = parseInt(this.value);
+        areaDisplay.textContent = `${area} sq ft`;
+        
+        // Calculate prices based on area
+        const basic = calculatePrice(200, area);
+        const deep = calculatePrice(2499, area);
+        const move = calculatePrice(2499, area);
+        const premium = calculatePrice(2999, area);
+
+        basicPrice.textContent = `$${basic}`;
+        deepPrice.textContent = `$${deep}`;
+        movePrice.textContent = `$${move}`;
+        premiumPrice.textContent = `$${premium}`;
+    });
+
+    function calculatePrice(base, area) {
+        if (area < 500) return base;
+        if (area < 1000) return base + 20;
+        if (area < 1500) return base + 40;
+        if (area < 2000) return base + 60;
+        return base + 80;
+    }
+
+    // Initialize the slider
+    areaSlider.dispatchEvent(new Event('input'));
+});
+</script>
 
 
 
