@@ -2646,12 +2646,11 @@
     <!-- Sticky Header -->
     <!-- Sticky Header -->
     <header class="sticky top-0 z-50 bg-white shadow-sm">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center flex-wrap">
+        <div class="container mx-auto px-4 py-1 flex justify-between items-center flex-wrap">
 
             <!-- Logo (Always Visible) -->
-            <div class="flex-shrink-0">
-                <img src="https://maidsofcyfair.com/wp-content/uploads/2025/01/cropped-cropped-final-white-logo-2-2.png"
-                    alt="Maids of Cy-Fair Logo" class="h-12 w-auto">
+            <div class="flex-shrink-0 -my-2">
+                <img src="black.png" alt="Maids of Cy-Fair Logo" class="h-40 w-auto">
             </div>
 
             <!-- Desktop Navigation -->
@@ -2725,7 +2724,7 @@
     <!-- Hero Section -->
     <section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden">
         <!-- Background Video -->
-        <video autoplay="" muted="" loop="" playsinline="" class="absolute z-0 w-full h-full object-cover">
+        <video autoplay muted loop playsinline class="absolute z-0 w-full h-full object-cover">
             <source src="one.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -2736,501 +2735,452 @@
         <!-- Content -->
         <div class="container mx-auto px-4 flex flex-col items-center text-center relative z-20">
             <div class="bg-black bg-opacity-30 p-8 rounded-lg mb-8">
-                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-                    Maids of <span class="text-primary">Cy-Fair</span>
+                <!-- CHANGED: Font to 'Montserrat' and blue-to-black -->
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight font-['Montserrat']">
+                    Finally, <span class="text-black">Cleaning That Makes Sense</span>
                 </h1>
             </div>
 
-            <!-- <button class="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition shadow-lg mb-6"> -->
-
-            <a href="#pricing"
-                class="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition shadow-lg mb-6 inline-block">
-                Get a Quote
+            <!-- CTA Button (unchanged) -->
+            <a href="appicing"
+                class="bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all shadow-lg mb-6 inline-block transform hover:scale-105">
+                Get Your Free Quote Today
             </a>
 
-            <!-- </button> -->
-
-            <p class="text-xl text-white mb-12 max-w-lg">
-                Build your clean! Only pay for what we clean.
+            <!-- Subheading (unchanged) -->
+            <p class="text-xl text-white mb-12 max-w-lg font-['Open_Sans']">
+                A custom à la carte service - only pay for what we clean.
             </p>
         </div>
     </section>
-   <section class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-        <div class="flex flex-col md:flex-row items-center gap-12">
-            <div class="md:w-1/2">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">THE BIG DIFFERENCE</h2>
-                <p class="text-lg text-gray-600 mb-8">
-                    Industry's pioneering A' La Carte maid service program, where YOU have the power to tailor your
-                    cleaning services precisely to your preferences and budget.
-                </p>
-                <div class="space-y-4">
-                    <p class="text-gray-700">
-                        Book now and customize your cleaning on the booking form and get an instant quote as you
-                        build!
-                    </p>
-                    <button
-                        class="bg-primary hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition shadow-md">
-                        Book Now
-                    </button>
-                </div>
-            </div>
-            <div class="md:w-1/2">
-                <div class="relative rounded-xl overflow-hidden shadow-lg">
-                    <video class="w-full" controls autoplay loop playsinline id="differenceVideo">
-                        <source src="two.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="absolute inset-0 flex items-center justify-center" id="videoPlayButton">
-                        <button
-                            class="bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full w-16 h-16 flex items-center justify-center transition">
-                            <i class="fas fa-play text-primary text-xl"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const video = document.getElementById('differenceVideo');
-            const playButton = document.getElementById('videoPlayButton');
-            
-            // Remove muted attribute to enable sound
-            video.removeAttribute('muted');
-            
-            // Modern browsers require user interaction to play audio
-            playButton.addEventListener('click', function() {
-                video.play()
-                    .then(() => {
-                        playButton.style.display = 'none';
-                    })
-                    .catch(error => {
-                        console.log('Auto-play was prevented:', error);
-                        // Show custom message if needed
-                    });
-            });
-            
-            // Hide play button when video starts playing
-            video.addEventListener('play', function() {
-                playButton.style.display = 'none';
-            });
-            
-            // Show play button when video is paused
-            video.addEventListener('pause', function() {
-                playButton.style.display = 'flex';
-            });
-            
-            // Try to autoplay (without sound) initially
-            video.muted = true;
-            video.play().then(() => {
-                // If autoplay works, keep it muted until user interacts
-                document.body.addEventListener('click', function() {
-                    video.muted = false;
-                }, { once: true });
-            }).catch(error => {
-                console.log('Autoplay prevented:', error);
-            });
-        });
-    </script>
-</section>
-
-    <!-- Why Choose Us Section -->
-    <section class="py-16 bg-[#F1F5F9]">
+    <!-- Big difference method -->
+    <section id="difference-section" class="py-16 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Why choose us over others?</h2>
-            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">
-                Discover what makes our cleaning service stand out from the competition
-            </p>
-
-            <div class="scroll-container flex overflow-x-auto pb-6 md:overflow-hidden md:justify-center md:space-x-6">
-                <!-- Feature Box 1 -->
-                <div class="feature-box flex-shrink-0 w-64 bg-white rounded-xl shadow-md p-6 mr-6">
-                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-hand-holding-usd text-blue-500 text-2xl"></i>
-                    </div>
-                    <h3 class="font-bold text-xl mb-2">AFFORDABLE</h3>
-                    <p class="text-gray-600">Competitive pricing without compromising on quality. Get premium service at
-                        reasonable rates.</p>
-                </div>
-
-                <!-- Feature Box 2 -->
-                <div class="feature-box flex-shrink-0 w-64 bg-white rounded-xl shadow-md p-6 mr-6">
-                    <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-calendar-alt text-green-500 text-2xl"></i>
-                    </div>
-                    <h3 class="font-bold text-xl mb-2">FLEXIBLE</h3>
-                    <p class="text-gray-600">Schedule cleanings at your convenience. We work around your busy lifestyle.
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">THE BIG DIFFERENCE</h2>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Industry's pioneering A' La Carte maid service program, where YOU have the power to tailor your
+                        cleaning services precisely to your preferences and budget.
                     </p>
-                </div>
-
-                <!-- Feature Box 3 -->
-                <div class="feature-box flex-shrink-0 w-64 bg-white rounded-xl shadow-md p-6 mr-6">
-                    <div class="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-clipboard-check text-purple-500 text-2xl"></i>
-                    </div>
-                    <h3 class="font-bold text-xl mb-2">THOROUGH</h3>
-                    <p class="text-gray-600">Detailed checklist ensures every corner is spotless. We don't cut corners.
-                    </p>
-                </div>
-
-                <!-- Feature Box 4 -->
-                <div class="feature-box flex-shrink-0 w-64 bg-white rounded-xl shadow-md p-6">
-                    <div class="w-14 h-14 bg-amber-100 rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-hands text-amber-500 text-2xl"></i>
-                    </div>
-                    <h3 class="font-bold text-xl mb-2">TRUSTED</h3>
-                    <p class="text-gray-600">Background-checked professionals you can rely on. Your home is safe with
-                        us.</p>
-                </div>
-            </div>
-
-            <!-- Video Section -->
-            <div class="mt-16 max-w-4xl mx-auto rounded-xl overflow-hidden shadow-lg">
-                <video class="w-full" controls autoplay muted loop>
-                    <source src="one.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-
-        </div>
-    </section>
-
-
-
-    <!-- The Big Difference Section -->
-
-
-
-
-    <!-- Pricing Calculator -->
-    <section id="pricing" class="py-16 bg-gray-50">
-    <div class="container mx-auto px-4">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Get Starting Quote</h2>
-            <p class="text-gray-600 max-w-2xl mx-auto">This is just an estimate. Click BOOK NOW to tailor your
-                cleaning. Remove rooms and areas to lower your price and pay only what we clean.</p>
-        </div>
-
-        <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
-            <div class="md:flex">
-                <div class="md:w-1/2 p-8">
-                    <div class="mb-8">
-                        <label class="block text-gray-700 mb-2 font-medium">Select Carpet Area (sq ft)</label>
-                        <div class="relative">
-                            <input type="range" min="300" max="2500" value="1200" class="area-slider" id="area-slider">
-                            <div class="flex justify-between text-xs text-gray-500 mt-1">
-                                <span>300</span>
-                                <span>500</span>
-                                <span>1000</span>
-                                <span>1500</span>
-                                <span>2000</span>
-                                <span>2500+</span>
-                            </div>
-                        </div>
-                        <div class="mt-4 text-center">
-                            <p class="text-2xl font-bold text-primary" id="area-display">1200 sq ft</p>
-                        </div>
-                    </div>
-
-                    <div class="mb-4">
-                        <label class="block text-gray-700 mb-2 font-medium">Cleaning Frequency</label>
-                        <div class="grid grid-cols-4 gap-2">
-                            <button class="py-2 px-4 bg-gray-100 rounded-lg text-gray-700 font-medium">One-time</button>
-                            <button class="py-2 px-4 bg-primary text-white rounded-lg font-medium">Weekly</button>
-                            <button class="py-2 px-4 bg-gray-100 rounded-lg text-gray-700 font-medium">Biweekly</button>
-                            <button class="py-2 px-4 bg-gray-100 rounded-lg text-gray-700 font-medium">Monthly</button>
-                        </div>
-                    </div>
-
-                    <div class="mb-4">
-                        <label class="block text-gray-700 mb-2 font-medium">Special Services</label>
-                        <div class="grid grid-cols-2 gap-2">
-                            <button class="py-2 px-4 bg-gray-100 rounded-lg text-gray-700 font-medium">
-                                Move In / Move Out
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="mt-8">
-                        <button class="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-lg font-medium transition shadow-lg">
+                    <div class="space-y-4">
+                        <p class="text-gray-700">
+                            Book now and customize your cleaning on the booking form and get an instant quote as you
+                            build!
+                        </p>
+                        <button
+                            class="bg-primary hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition shadow-md">
                             Book Now
                         </button>
                     </div>
                 </div>
-
-                <div class="md:w-1/2 bg-primary bg-opacity-5 p-8 flex flex-col justify-center">
-                    <h3 class="text-xl font-bold mb-6 text-center">Estimated Pricing</h3>
-                    <div class="space-y-4">
-                        <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                            <div class="flex items-center">
-                                <div class="bg-blue-100 rounded-lg p-2 mr-4">
-                                    <i class="fas fa-home text-primary"></i>
-                                </div>
-                                <div>
-                                    <p class="font-semibold">Basic Clean</p>
-                                </div>
-                            </div>
-                            <p class="font-bold text-xl" id="basic-price">$200</p>
-                        </div>
-
-                        <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                            <div class="flex items-center">
-                                <div class="bg-cyan-100 rounded-lg p-2 mr-4">
-                                    <i class="fas fa-broom text-secondary"></i>
-                                </div>
-                                <div>
-                                    <p class="font-semibold">Deep Clean</p>
-                                </div>
-                            </div>
-                            <p class="font-bold text-xl" id="deep-price">$2499</p>
-                        </div>
-
-                        <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                            <div class="flex items-center">
-                                <div class="bg-amber-100 rounded-lg p-2 mr-4">
-                                    <i class="fas fa-truck-moving text-amber-500"></i>
-                                </div>
-                                <div>
-                                    <p class="font-semibold">Move-In/Out</p>
-                                </div>
-                            </div>
-                            <p class="font-bold text-xl" id="move-price">$2499</p>
-                        </div>
-
-                        <div class="flex justify-between items-center py-3">
-                            <div class="flex items-center">
-                                <div class="bg-green-100 rounded-lg p-2 mr-4">
-                                    <i class="fas fa-star text-accent"></i>
-                                </div>
-                                <div>
-                                    <p class="font-semibold">Premium Plan</p>
-                                </div>
-                            </div>
-                            <p class="font-bold text-xl" id="premium-price">$2999</p>
+                <div class="md:w-1/2">
+                    <div class="relative rounded-xl overflow-hidden shadow-lg">
+                        <video class="w-full" muted autoplay loop playsinline controls id="differenceVideo">
+                            <source src="two.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="absolute inset-0 flex items-center justify-center" id="videoPlayButton">
+                            <button
+                                class="bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full w-16 h-16 flex items-center justify-center transition">
+                                <i class="fas fa-play text-primary text-xl"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Price calculator functionality
-    const areaSlider = document.getElementById('area-slider');
-    const areaDisplay = document.getElementById('area-display');
-    const basicPrice = document.getElementById('basic-price');
-    const deepPrice = document.getElementById('deep-price');
-    const movePrice = document.getElementById('move-price');
-    const premiumPrice = document.getElementById('premium-price');
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const video = document.getElementById('differenceVideo');
+                const playButton = document.getElementById('videoPlayButton');
+                const section = document.getElementById('difference-section');
 
-    areaSlider.addEventListener('input', function() {
-        const area = parseInt(this.value);
-        areaDisplay.textContent = `${area} sq ft`;
-        
-        // Calculate prices based on area
-        const basic = calculatePrice(200, area);
-        const deep = calculatePrice(2499, area);
-        const move = calculatePrice(2499, area);
-        const premium = calculatePrice(2999, area);
+                // Initial setup
+                video.muted = true;
+                video.loop = true;
+                video.playsInline = true;
 
-        basicPrice.textContent = `$${basic}`;
-        deepPrice.textContent = `$${deep}`;
-        movePrice.textContent = `$${move}`;
-        premiumPrice.textContent = `$${premium}`;
-    });
+                function tryPlayVideo() {
+                    const playPromise = video.play();
+                    if (playPromise !== undefined) {
+                        playPromise.then(() => {
+                            playButton.style.display = 'none';
+                        }).catch((error) => {
+                            // Show button if autoplay fails
+                            playButton.style.display = 'flex';
+                            console.log("Autoplay blocked:", error);
+                        });
+                    }
+                }
 
-    function calculatePrice(base, area) {
-        if (area < 500) return base;
-        if (area < 1000) return base + 20;
-        if (area < 1500) return base + 40;
-        if (area < 2000) return base + 60;
-        return base + 80;
-    }
+                // Intersection Observer to control video playback
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            tryPlayVideo();
+                        } else {
+                            video.pause();
+                        }
+                    });
+                }, {
+                    threshold: 0.5 // 50% of section must be visible
+                });
 
-    // Initialize the slider
-    areaSlider.dispatchEvent(new Event('input'));
-});
-</script>
+                observer.observe(section);
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const pricingSection = document.getElementById('pricing');
-    const mobileCTA = document.getElementById('mobilePricingCTA');
-    let isPricingVisible = false;
-    let scrollTimeout;
+                // Manual play button behavior
+                playButton.addEventListener('click', function () {
+                    video.muted = false;
+                    video.play().then(() => {
+                        playButton.style.display = 'none';
+                    }).catch(error => {
+                        console.log('Manual play failed:', error);
+                    });
+                });
 
-    function checkPricingVisibility() {
-        const rect = pricingSection.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-        
-        // Check if at least 25% of pricing section is visible
-        const visible = (rect.top <= windowHeight * 0.75) && 
-                       (rect.bottom >= windowHeight * 0.25);
-        
-        if (visible && !isPricingVisible) {
-            // Show CTA with smooth animation
-            mobileCTA.classList.remove('translate-y-full');
-            isPricingVisible = true;
-        } else if (!visible && isPricingVisible) {
-            // Hide CTA with smooth animation
-            mobileCTA.classList.add('translate-y-full');
-            isPricingVisible = false;
-        }
-    }
+                // Unmute on first user interaction anywhere on page
+                document.addEventListener('click', function enableSound() {
+                    video.muted = false;
+                    document.removeEventListener('click', enableSound);
+                }, { once: true });
 
-    // Throttle scroll events for better performance
-    function throttleCheck() {
-        if (!scrollTimeout) {
-            scrollTimeout = setTimeout(function() {
-                scrollTimeout = null;
-                checkPricingVisibility();
-            }, 100);
-        }
-    }
+                // Manage play/pause UI
+                video.addEventListener('play', function () {
+                    playButton.style.display = 'none';
+                });
 
-    // Initial check
-    checkPricingVisibility();
-    
-    // Check on scroll (throttled)
-    window.addEventListener('scroll', throttleCheck);
-    
-    // Also check when window is resized
-    window.addEventListener('resize', checkPricingVisibility);
+                video.addEventListener('pause', function () {
+                    playButton.style.display = 'flex';
+                });
+            });
+        </script>
 
-    // Price calculator functionality (existing code)
-    const areaSlider = document.getElementById('area-slider');
-    const areaDisplay = document.getElementById('area-display');
-    const basicPrice = document.getElementById('basic-price');
-    const deepPrice = document.getElementById('deep-price');
-    const movePrice = document.getElementById('move-price');
-    const premiumPrice = document.getElementById('premium-price');
+    </section>
+    <!-- Pricing Calculator -->
+    <section id="pricing" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Get Starting Quote</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    This is just an estimate. Click BOOK NOW to tailor your cleaning. Remove rooms and areas to lower
+                    your price and pay only for what we clean.
+                </p>
+            </div>
 
-    areaSlider.addEventListener('input', function() {
-        const area = parseInt(this.value);
-        areaDisplay.textContent = `${area} sq ft`;
-        
-        // Calculate prices based on area
-        const basic = calculatePrice(200, area);
-        const deep = calculatePrice(2499, area);
-        const move = calculatePrice(2499, area);
-        const premium = calculatePrice(2999, area);
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="md:flex">
+                    <!-- Left panel -->
+                    <div class="md:w-1/2 p-8">
+                        <div class="mb-8">
+                            <label class="block text-gray-700 mb-2 font-medium">Select Home Size (sq ft)</label>
+                            <div class="relative">
+                                <input type="range" min="1500" max="4500" step="10" value="1500" class="area-slider"
+                                    id="area-slider" />
 
-        basicPrice.textContent = `$${basic}`;
-        deepPrice.textContent = `$${deep}`;
-        movePrice.textContent = `$${move}`;
-        premiumPrice.textContent = `$${premium}`;
-    });
+                                <div class="flex justify-between text-xs text-gray-500 mt-1">
+                                    <span>1500</span>
+                                    <span>2000</span>
+                                    <span>2500</span>
+                                    <span>3000</span>
+                                    <span>3500</span>
+                                    <span>4000</span>
+                                    <span>4500</span>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-center">
+                                <p class="text-2xl font-bold text-primary" id="area-display">1500 sq ft</p>
+                            </div>
+                        </div>
 
-    function calculatePrice(base, area) {
-        if (area < 500) return base;
-        if (area < 1000) return base + 20;
-        if (area < 1500) return base + 40;
-        if (area < 2000) return base + 60;
-        return base + 80;
-    }
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-2 font-medium">Cleaning Frequency</label>
+                            <div class="grid grid-cols-3 gap-2">
+                                <button class="py-2 px-4 bg-primary text-white rounded-lg font-medium">One-time</button>
+                                <button
+                                    class="py-2 px-4 bg-gray-100 text-gray-700 rounded-lg font-medium">Weekly</button>
+                                <button
+                                    class="py-2 px-4 bg-gray-100 text-gray-700 rounded-lg font-medium">Bi-weekly</button>
+                                <button
+                                    class="py-2 px-4 bg-gray-100 text-gray-700 rounded-lg font-medium">Monthly</button>
+                                <button class="py-2 px-4 bg-gray-100 text-gray-700 rounded-lg font-medium">Move
+                                    Out</button>
+                            </div>
+                        </div>
 
-    // Initialize the slider
-    areaSlider.dispatchEvent(new Event('input'));
-});
-</script>
+                        <div class="mt-8">
+                            <button
+                                class="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-lg font-medium transition shadow-lg">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Right panel -->
+                    <div class="md:w-1/2 bg-primary bg-opacity-5 p-8 flex flex-col justify-center">
+                        <h3 class="text-xl font-bold mb-6 text-center">Starting Quote</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center py-3 border-b border-gray-200">
+                                <p class="font-semibold">One-time</p>
+                                <p class="font-bold text-xl" id="oneTime-price">$0</p>
+                            </div>
+                            <div class="flex justify-between items-center py-3 border-b border-gray-200">
+                                <p class="font-semibold">Move Out</p>
+                                <p class="font-bold text-xl" id="moveOut-price">$0</p>
+                            </div>
+                            <div class="flex justify-between items-center py-3 border-b border-gray-200">
+                                <p class="font-semibold">Monthly</p>
+                                <p class="font-bold text-xl" id="monthly-price">$0</p>
+                            </div>
+                            <div class="flex justify-between items-center py-3 border-b border-gray-200">
+                                <p class="font-semibold">Bi-weekly</p>
+                                <p class="font-bold text-xl" id="biweekly-price">$0</p>
+                            </div>
+                            <div class="flex justify-between items-center py-3">
+                                <p class="font-semibold">Weekly</p>
+                                <p class="font-bold text-xl" id="weekly-price">$0</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const areaSlider = document.getElementById('area-slider');
+            const areaDisplay = document.getElementById('area-display');
+
+            // Base pricing rate per 100 sq ft
+            const baseRatePer100 = 15; // adjust this value to tune base price
+
+            // Multiplier for each plan type
+            const prices = {
+                "oneTime-price": 1.0,
+                "moveOut-price": 1.2,
+                "monthly-price": 0.9,
+                "biweekly-price": 0.95,
+                "weekly-price": 0.85
+            };
+
+            function calculateBasePrice(area) {
+                return Math.round((area / 100) * baseRatePer100);
+            }
+
+            function updatePrices(area) {
+                areaDisplay.textContent = `${area} sq ft`;
+                const base = calculateBasePrice(area);
+
+                for (const [id, multiplier] of Object.entries(prices)) {
+                    const price = Math.round(base * multiplier);
+                    document.getElementById(id).textContent = `$${price}`;
+                }
+            }
+
+            areaSlider.addEventListener('input', () => {
+                const area = parseInt(areaSlider.value);
+                updatePrices(area);
+            });
+
+            // Init
+            updatePrices(parseInt(areaSlider.value));
+        });
+    </script>
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const pricingSection = document.getElementById('pricing');
+            const mobileCTA = document.getElementById('mobilePricingCTA');
+            let isPricingVisible = false;
+            let scrollTimeout;
+
+            function checkPricingVisibility() {
+                const rect = pricingSection.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+
+                // Check if at least 25% of pricing section is visible
+                const visible = (rect.top <= windowHeight * 0.75) &&
+                    (rect.bottom >= windowHeight * 0.25);
+
+                if (visible && !isPricingVisible) {
+                    // Show CTA with smooth animation
+                    mobileCTA.classList.remove('translate-y-full');
+                    isPricingVisible = true;
+                } else if (!visible && isPricingVisible) {
+                    // Hide CTA with smooth animation
+                    mobileCTA.classList.add('translate-y-full');
+                    isPricingVisible = false;
+                }
+            }
+
+            // Throttle scroll events for better performance
+            function throttleCheck() {
+                if (!scrollTimeout) {
+                    scrollTimeout = setTimeout(function () {
+                        scrollTimeout = null;
+                        checkPricingVisibility();
+                    }, 100);
+                }
+            }
+
+            // Initial check
+            checkPricingVisibility();
+
+            // Check on scroll (throttled)
+            window.addEventListener('scroll', throttleCheck);
+
+            // Also check when window is resized
+            window.addEventListener('resize', checkPricingVisibility);
+
+            // Price calculator functionality (existing code)
+            const areaSlider = document.getElementById('area-slider');
+            const areaDisplay = document.getElementById('area-display');
+            const basicPrice = document.getElementById('basic-price');
+            const deepPrice = document.getElementById('deep-price');
+            const movePrice = document.getElementById('move-price');
+            const premiumPrice = document.getElementById('premium-price');
+
+            areaSlider.addEventListener('input', function () {
+                const area = parseInt(this.value);
+                areaDisplay.textContent = `${area} sq ft`;
+
+                // Calculate prices based on area
+                const basic = calculatePrice(200, area);
+                const deep = calculatePrice(2499, area);
+                const move = calculatePrice(2499, area);
+                const premium = calculatePrice(2999, area);
+
+                basicPrice.textContent = `$${basic}`;
+                deepPrice.textContent = `$${deep}`;
+                movePrice.textContent = `$${move}`;
+                premiumPrice.textContent = `$${premium}`;
+            });
+
+            function calculatePrice(base, area) {
+                if (area < 500) return base;
+                if (area < 1000) return base + 20;
+                if (area < 1500) return base + 40;
+                if (area < 2000) return base + 60;
+                return base + 80;
+            }
+
+            // Initialize the slider
+            areaSlider.dispatchEvent(new Event('input'));
+        });
+    </script>
 
 
 
 
     <!-- Safety Priority Section -->
-    <section class="py-16 bg-gray-50">
-    <div class="container mx-auto px-4">
-        <div class="flex flex-col md:flex-row items-center gap-12">
-            <div class="md:w-1/2">
-                <div class="relative rounded-xl overflow-hidden shadow-lg">
-                    <video class="w-full" controls loop playsinline id="safetyVideo">
-                        <source src="three.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="absolute inset-0 flex items-center justify-center" id="playButtonOverlay">
-                        <button class="bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full w-16 h-16 flex items-center justify-center transition">
-                            <i class="fas fa-play text-primary text-xl"></i>
-                        </button>
+    <section id="safety-section" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <div class="relative rounded-xl overflow-hidden shadow-lg">
+                        <video class="w-full" muted playsinline loop id="safetyVideo" controls>
+                            <source src="three.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="absolute inset-0 flex items-center justify-center" id="playButtonOverlay">
+                            <button
+                                class="bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full w-16 h-16 flex items-center justify-center transition">
+                                <i class="fas fa-play text-primary text-xl"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="md:w-1/2">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">Your Safety is Our Priority</h2>
-                <p class="text-lg text-gray-600">
-                    That's why we use a professional color-coded cleaning program! Each towel and mop is designated
-                    for a specific area of your home, minimizing cross-contamination and maximizing hygiene. As the
-                    only cleaning service in the industry with this level of care, we ensure every room gets the
-                    attention it deserves — with the right tools for the job.
-                </p>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Your Safety is Our Priority</h2>
+                    <p class="text-lg text-gray-600">
+                        That's why we use a professional color-coded cleaning program! Each towel and mop is designated
+                        for a specific area of your home, minimizing cross-contamination and maximizing hygiene. As the
+                        only cleaning service in the industry with this level of care, we ensure every room gets the
+                        attention it deserves — with the right tools for the job.
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const video = document.getElementById('safetyVideo');
-            const playButton = document.getElementById('playButtonOverlay');
-            
-            // Start with muted autoplay (works in most browsers)
-            video.muted = true;
-            video.autoplay = true;
-            
-            // Try to autoplay immediately
-            const playPromise = video.play();
-            
-            if (playPromise !== undefined) {
-                playPromise.catch(error => {
-                    // Autoplay was prevented, show play button
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const video = document.getElementById('safetyVideo');
+                const playButton = document.getElementById('playButtonOverlay');
+                const section = document.getElementById('safety-section');
+
+                // Initial setup
+                video.muted = true;
+                video.loop = true;
+                video.playsInline = true;
+
+                // Function to try playing video
+                function tryPlayVideo() {
+                    const playPromise = video.play();
+                    if (playPromise !== undefined) {
+                        playPromise.then(() => {
+                            playButton.style.display = 'none';
+                        }).catch((error) => {
+                            // Show button if autoplay fails
+                            playButton.style.display = 'flex';
+                            console.log("Autoplay blocked:", error);
+                        });
+                    }
+                }
+
+                // Intersection Observer
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            tryPlayVideo();
+                        } else {
+                            video.pause();
+                        }
+                    });
+                }, {
+                    threshold: 0.5 // At least 50% of the section is visible
+                });
+
+                observer.observe(section);
+
+                // Play button manually enables sound + hides button
+                playButton.addEventListener('click', () => {
+                    video.muted = false;
+                    video.play().then(() => {
+                        playButton.style.display = 'none';
+                    }).catch(error => {
+                        console.log('Manual play failed:', error);
+                    });
+                });
+
+                // Hide button when playing
+                video.addEventListener('play', () => {
+                    playButton.style.display = 'none';
+                });
+
+                video.addEventListener('pause', () => {
                     playButton.style.display = 'flex';
                 });
-            }
-            
-            // When user interacts with page, try to unmute
-            document.addEventListener('click', function enableSound() {
-                video.muted = false;
-                // Remove this listener after first interaction
-                document.removeEventListener('click', enableSound);
-            }, { once: true });
-            
-            // Play button click handler
-            playButton.addEventListener('click', function() {
-                video.play()
-                    .then(() => {
-                        playButton.style.display = 'none';
-                        video.muted = false; // Enable sound when user clicks play
-                    })
-                    .catch(error => {
-                        console.log('Playback failed:', error);
-                    });
+
+                // Unmute on user interaction anywhere (once)
+                document.addEventListener('click', function enableSound() {
+                    video.muted = false;
+                    document.removeEventListener('click', enableSound);
+                }, { once: true });
             });
-            
-            // Hide/show play button based on playback state
-            video.addEventListener('play', function() {
-                playButton.style.display = 'none';
-            });
-            
-            video.addEventListener('pause', function() {
-                playButton.style.display = 'flex';
-            });
-            
-            // Ensure video loops properly
-            video.addEventListener('ended', function() {
-                video.currentTime = 0;
-                video.play();
-            });
-        });
-    </script>
-</section>
+        </script>
+
+    </section>
     <!-- Pricing Calculator -->
 
 
 
     <!-- Mobile Sticky CTA -->
-    <div class="fixed bottom-0 left-0 right-0 bg-white shadow-lg py-4 px-6 flex justify-between items-center md:hidden">
+    <!-- <div class="fixed bottom-0 left-0 right-0 bg-white shadow-lg py-4 px-6 flex justify-between items-center md:hidden">
         <div>
             <p class="font-semibold">Starting from</p>
             <p class="text-xl font-bold text-primary">$99</p>
@@ -3238,7 +3188,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <button class="bg-primary hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition">
             Book Now
         </button>
-    </div>
+    </div> -->
 
 
 
@@ -3293,71 +3243,62 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p class="max-w-2xl mx-auto text-gray-300">We proudly serve Houston and surrounding areas</p>
             </div>
 
-            <!-- Map and Area List -->
+            <!-- 3-column Row: Coverage | Map | ZIP Check -->
             <div class="max-w-screen-xl mx-auto mb-12">
-                <div class="flex flex-col md:flex-row items-center gap-8">
-                    <!-- Area List -->
-                    <div class="md:w-1/2 w-full">
-                        <div class="bg-white text-gray-800 rounded-lg p-6 shadow-lg">
-                            <h3 class="text-xl font-bold mb-4">Houston Coverage</h3>
-                            <p class="mb-4">We cover all major Houston neighborhoods and surrounding areas</p>
-                            <div class="grid grid-cols-2 gap-1 mb-4">
-                                <div class="flex items-center">
-                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                                    <span>Bridgeland</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                                    <span>Fairfield</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                                    <span>Towne Lake</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                                    <span>Coles Crossing</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                                    <span>Lakeland Village</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                                    <span>Stone Gate</span>
-                                </div>
-                            </div>
-                            <p class="text-sm text-gray-500">Serving all of Cypress and surrounding areas</p>
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+
+                    <!-- Houston Coverage Box (smaller) -->
+                    <div
+                        class="md:col-span-3 bg-white/60 text-gray-800 rounded-lg p-4 shadow-lg text-sm backdrop-blur-md">
+                        <h3 class="text-lg font-bold mb-2">Houston Coverage</h3>
+                        <p class="mb-2">We cover major Houston neighborhoods:</p>
+                        <div class="grid grid-cols-2 gap-1 mb-2 text-xs">
+                            <div class="flex items-center"><i
+                                    class="fas fa-check-circle text-green-500 mr-2"></i>Bridgeland</div>
+                            <div class="flex items-center"><i
+                                    class="fas fa-check-circle text-green-500 mr-2"></i>Fairfield</div>
+                            <div class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Towne
+                                Lake</div>
+                            <div class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Coles
+                                Crossing</div>
+                            <div class="flex items-center"><i
+                                    class="fas fa-check-circle text-green-500 mr-2"></i>Lakeland Village</div>
+                            <div class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Stone
+                                Gate</div>
                         </div>
+                        <p class="text-gray-500 text-xs">Serving all of Cypress and surrounding areas</p>
                     </div>
 
-                    <!-- Google Map Embed -->
-                    <div class="md:w-1/2 w-full">
-                        <div class="rounded-lg overflow-hidden shadow-lg h-96">
-                            <iframe width="100%" height="100%" style="border:0" loading="lazy" allowfullscreen=""
-                                referrerpolicy="no-referrer-when-downgrade"
-                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13831.961289326908!2d-95.681377!3d29.993474!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640ca88c4f9c091%3A0xc5b3025fdc9833ef!2sBridgeland%2C%20TX!5e0!3m2!1sen!2sus!4v1719679461374!5m2!1sen!2sus">
-                            </iframe>
-                        </div>
+                    <!-- Google Map Box (bigger, less transparent) -->
+                    <div class="md:col-span-6 rounded-lg overflow-hidden shadow-lg h-72 backdrop-blur-md bg-white/80">
+                        <iframe width="100%" height="100%" style="border:0" loading="lazy" allowfullscreen=""
+                            referrerpolicy="no-referrer-when-downgrade"
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13831.961289326908!2d-95.681377!3d29.993474!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640ca88c4f9c091%3A0xc5b3025fdc9833ef!2sBridgeland%2C%20TX!5e0!3m2!1sen!2sus!4v1719679461374!5m2!1sen!2sus">
+                        </iframe>
                     </div>
+
+                    <!-- ZIP Code Checker (right side) -->
+                    <div
+                        class="md:col-span-3 bg-white/60 text-gray-800 rounded-lg shadow-lg p-4 text-sm backdrop-blur-md">
+                        <h3 class="text-lg font-bold mb-2 text-center">Check ZIP Availability</h3>
+                        <div class="flex">
+                            <input type="text" placeholder="ZIP Code"
+                                class="flex-1 border border-gray-300 rounded-l px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
+                            <button
+                                class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-r text-sm transition">
+                                Check
+                            </button>
+                        </div>
+                        <p class="text-center mt-2 text-gray-600 text-xs">We’ll instantly check if we service your area.
+                        </p>
+                    </div>
+
                 </div>
             </div>
 
-            <!-- ZIP Check -->
-            <div class="max-w-2xl mx-auto">
-                <div class="bg-white text-gray-800 rounded-xl shadow-lg p-6">
-                    <h3 class="text-xl font-bold mb-4 text-center">Check Service Availability</h3>
-                    <div class="flex">
-                        <input type="text" placeholder="Enter your ZIP code"
-                            class="flex-1 border border-gray-300 rounded-l-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        <button
-                            class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-r-lg font-medium transition">
-                            Check
-                        </button>
-                    </div>
-                    <p class="text-center mt-4 text-sm text-gray-500">We'll instantly verify if we service your area</p>
-                </div>
-            </div>
+
+
+
         </div>
 
         <!-- Background Slideshow Keyframes -->
@@ -3467,14 +3408,68 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </section>
 
+    <!-- Why Choose Us Section -->
+    <section class="py-16 bg-[#F1F5F9]">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Why choose us over others?</h2>
+            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">
+                Discover what makes our cleaning service stand out from the competition
+            </p>
+
+            <div class="scroll-container flex overflow-x-auto pb-6 md:overflow-hidden md:justify-center md:space-x-6">
+                <!-- Feature Box 1 -->
+                <div class="feature-box flex-shrink-0 w-64 bg-white rounded-xl shadow-md p-6 mr-6">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-hand-holding-usd text-blue-500 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">AFFORDABLE</h3>
+                    <p class="text-gray-600">Competitive pricing without compromising on quality. Get premium service at
+                        reasonable rates.</p>
+                </div>
+
+                <!-- Feature Box 2 -->
+                <div class="feature-box flex-shrink-0 w-64 bg-white rounded-xl shadow-md p-6 mr-6">
+                    <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-calendar-alt text-green-500 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">FLEXIBLE</h3>
+                    <p class="text-gray-600">Schedule cleanings at your convenience. We work around your busy lifestyle.
+                    </p>
+                </div>
+
+                <!-- Feature Box 3 -->
+                <div class="feature-box flex-shrink-0 w-64 bg-white rounded-xl shadow-md p-6 mr-6">
+                    <div class="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-clipboard-check text-purple-500 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">THOROUGH</h3>
+                    <p class="text-gray-600">Detailed checklist ensures every corner is spotless. We don't cut corners.
+                    </p>
+                </div>
+
+                <!-- Feature Box 4 -->
+                <div class="feature-box flex-shrink-0 w-64 bg-white rounded-xl shadow-md p-6">
+                    <div class="w-14 h-14 bg-amber-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-hands text-amber-500 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">TRUSTED</h3>
+                    <p class="text-gray-600">Background-checked professionals you can rely on. Your home is safe with
+                        us.</p>
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="bg-primary text-white py-12">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
                     <div class="flex items-center mb-4">
-                        <img src="black.png"
-                            alt="Maids of Cy-Fair Logo" class="h-12">
+                        <img src="black.png" alt="Maids of Cy-Fair Logo" class="h-12">
                     </div>
                     <p class="text-white mb-4">
                         Fully insured cleaners · Background checked · English speaking
@@ -3531,9 +3526,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     </ul>
                 </div>
             </div>
+            <div class="border-t border-gray-800 mt-8 pt-6">
+                <div class="flex flex-col md:flex-row justify-center items-center gap-4 text-white text-sm">
+                    <!-- Bottom Logo -->
+                    <img src="logo.png" alt="Bottom Logo" class="h-10">
 
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-white">
-                <p>© 2023 HoustonClean. All rights reserved.</p>
+                    <!-- Copyright -->
+                    <p>© 2023 HoustonClean. All rights reserved.</p>
+                </div>
             </div>
         </div>
     </footer>
